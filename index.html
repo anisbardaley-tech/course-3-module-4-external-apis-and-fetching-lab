@@ -3,15 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather Alerts App</title>
+  <title>Weather Alerts</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Weather Alerts App</h1>
-  <input type="text" id="state-input" placeholder="Enter state abbreviation">
-  <button id="fetch-alerts">Get Weather Alerts</button>
-  <div id="alerts-display"></div>
-  <div id="error-message" class="hidden"></div>
-  <script src="./index.js"></script>
+  <main>
+    <h1>Weather Alerts</h1>
+
+    <div class="search">
+      <label for="state-input">Enter a U.S. state abbreviation (e.g., NY):</label>
+      <input type="text" id="state-input" maxlength="10" autocomplete="off" placeholder="NY">
+      <button id="get-alerts-button">Get Weather Alerts</button>
+    </div>
+
+    <div id="loading-spinner" class="spinner" style="display: none;">Loading...</div>
+    <div id="error-message" class="error-message" style="display: none;"></div>
+
+    <h2 id="alerts-summary"></h2>
+    <ul id="alerts-list"></ul>
+  </main>
+
+  <script src="index.js"></script>
 </body>
 </html>
